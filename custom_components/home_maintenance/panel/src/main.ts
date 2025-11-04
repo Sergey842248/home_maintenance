@@ -152,20 +152,17 @@ export class HomeMaintenancePanel extends LitElement {
                 hideable: false,
                 type: "overflow",
                 template: (task: Task) => html`
-                <div style="display: flex; gap: 8px;">
-                    <mwc-button
+                <div style="display: flex; justify-content: flex-end;">
+                    <ha-icon-button
+                        .label=${localize('panel.cards.current.actions.complete', this.hass!.language)}
+                        .path=${mdiCheckCircleOutline}
                         @click=${() => this._handleCompleteTaskClick(task.id)}
-                        raised
-                        style="flex: 1;"
-                    >
-                        ${localize('panel.cards.current.actions.complete', this.hass!.language)}
-                    </mwc-button>
-                    <mwc-button
+                    ></ha-icon-button>
+                    <ha-icon-button
+                        .label=${localize('panel.cards.current.actions.remove', this.hass!.language)}
+                        .path=${mdiDelete}
                         @click=${() => this._handleRemoveTaskClick(task.id)}
-                        style="flex: 1;"
-                    >
-                        ${localize('panel.cards.current.actions.remove', this.hass!.language)}
-                    </mwc-button>
+                    ></ha-icon-button>
                 </div>
               `,
             },

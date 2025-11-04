@@ -66,7 +66,7 @@ Try polyfilling it using "@formatjs/intl-pluralrules"
 
     .card-actions {
         padding: 16px;
-        text-align: center;
+        text-align: left;
     }
 
     .card-actions mwc-button {
@@ -253,7 +253,7 @@ Try polyfilling it using "@formatjs/intl-pluralrules"
             </ha-expansion-panel>
 
             <div class="card-actions">
-                <mwc-button class="add-task-button" @click=${this._handleAddTaskClick} raised>
+                <mwc-button class="add-task-button" @click=${this._handleAddTaskClick} outlined>
                     <ha-icon .icon=${r2} style="margin-right: 8px;"></ha-icon>
                     ${l("panel.cards.new.actions.add_task",this.hass.language)}
                 </mwc-button>

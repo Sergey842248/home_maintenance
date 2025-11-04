@@ -169,4 +169,12 @@ export const commonStyle = css`
         --mdc-dialog-min-width: auto;
         }
     }
+
+    .table-wrapper ha-data-table {
+        --data-table-border-width: 0;
+    }
+
+    .table-wrapper ha-data-table div {
+        justify-content: right;
+    }
 `;
