@@ -60,7 +60,7 @@
                 "actions": {
                     "complete": "Complete",
                     "edit": "Edit",
-                    "remove": "Remove",
+                    "remove": "Delete",
                     "remove_and_future": "Remove this and future events"
                 },
                 "confirm_remove": "Are you sure you want to remove this task?",

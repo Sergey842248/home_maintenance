@@ -160,10 +160,10 @@ export class HomeMaintenancePanel extends LitElement {
                         ${localize('panel.cards.current.actions.complete', this.hass!.language)}
                     </mwc-button>
                     <mwc-button
-                        @click=${() => this._handleRemoveTaskClick(task.id, true)}
+                        @click=${() => this._handleRemoveTaskClick(task.id)}
                         style="flex: 1;"
                     >
-                        ${localize('panel.cards.current.actions.remove_and_future', this.hass!.language)}
+                        ${localize('panel.cards.current.actions.remove', this.hass!.language)}
                     </mwc-button>
                 </div>
               `,

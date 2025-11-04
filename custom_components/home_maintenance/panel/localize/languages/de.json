@@ -60,7 +60,7 @@
                 "actions": {
                     "complete": "Abschließen",
                     "edit": "Bearbeiten",
-                    "remove": "Entfernen",
+                    "remove": "Löschen",
                     "remove_and_future": "Dieses und zukünftige Ereignisse entfernen"
                 },
                 "confirm_remove": "Sind Sie sicher, dass Sie diese Aufgabe entfernen möchten?",
