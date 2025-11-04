@@ -5,7 +5,7 @@
     "frontend"
   ],
   "codeowners": [
-    "@TJPoorman"
+    "@Sergey842248"
   ],
   "config_flow": true,
   "dependencies": [
@@ -13,9 +13,9 @@
     "panel_custom",
     "tag"
   ],
-  "documentation": "https://github.com/TJPoorman/home_maintenance",
+  "documentation": "https://github.com/Sergey842248/home_maintenance",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/TJPoorman/home_maintenance/issues",
+  "issue_tracker": "https://github.com/Sergey842248/home_maintenance/issues",
   "requirements": [],
-  "version": "v0.0.0"
+  "version": "v1.0.0"
 }

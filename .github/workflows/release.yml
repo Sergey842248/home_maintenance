@@ -15,7 +15,7 @@ jobs:
 
       - name: Patch manifest and zip
         run: |
-          sed -i 's/v0.0.0/${{ steps.version.outputs.version }}/' custom_components/home_maintenance/manifest.json
+          sed -i 's/v1.0.0/${{ steps.version.outputs.version }}/' custom_components/home_maintenance/manifest.json
 
           cd custom_components/home_maintenance/
           zip ../../home_maintenance.zip ./* translations/* panel/dist/* -x '.*'
