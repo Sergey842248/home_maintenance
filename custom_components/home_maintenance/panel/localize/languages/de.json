@@ -60,9 +60,11 @@
                 "actions": {
                     "complete": "Abschließen",
                     "edit": "Bearbeiten",
-                    "remove": "Entfernen"
+                    "remove": "Entfernen",
+                    "remove_and_future": "Dieses und zukünftige Ereignisse entfernen"
                 },
-                "confirm_remove": "Sind Sie sicher, dass Sie diese Aufgabe entfernen möchten?"
+                "confirm_remove": "Sind Sie sicher, dass Sie diese Aufgabe entfernen möchten?",
+                "confirm_remove_and_future": "Sind Sie sicher, dass Sie diese und alle zukünftigen Vorkommen dieser Aufgabe entfernen möchten?"
             }
         },
         "dialog": {

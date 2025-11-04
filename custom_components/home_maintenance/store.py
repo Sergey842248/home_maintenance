@@ -123,7 +123,7 @@ class TaskStore:
 
         return entity.unique_id
 
-    def delete(self, task_id: str) -> None:
+    def delete(self, task_id: str, from_date: bool = False) -> None:
         """Remove a task."""
         er = entity_registry.async_get(self.hass)
 
@@ -145,7 +145,10 @@ class TaskStore:
         er.async_remove(entity_entry.entity_id)
 
         # Remove from your task list and persist
-        del self._tasks[task_id]
+        if task_id in self._tasks:
+            del self._tasks[task_id]
+        if task_id in self.hass.data[const.DOMAIN]["entities"]:
+            del self.hass.data[const.DOMAIN]["entities"][task_id]
         self._save()
 
     def update_task(self, task_id: str, updated: dict) -> None:

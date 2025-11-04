@@ -142,8 +142,8 @@ export class HomeMaintenancePanel extends LitElement {
                 },
             },
             complete: {
-                minWidth: "64px",
-                maxWidth: "64px",
+                minWidth: "128px",
+                maxWidth: "128px",
                 sortable: false,
                 groupable: false,
                 showNarrow: true,
@@ -151,12 +151,20 @@ export class HomeMaintenancePanel extends LitElement {
                 hideable: false,
                 type: "overflow",
                 template: (task: Task) => html`
-                <ha-icon-button
-                    @click=${() => this._handleCompleteTaskClick(task.id)}
-                    .label="Complete"
-                    title="Mark Task Complete"
-                    .path=${mdiCheckCircleOutline}
-                ></ha-icon-button>
+                <div style="display: flex; justify-content: flex-end;">
+                    <ha-icon-button
+                        @click=${() => this._handleCompleteTaskClick(task.id)}
+                        .label=${localize('panel.cards.current.actions.complete', this.hass!.language)}
+                        title=${localize('panel.cards.current.actions.complete', this.hass!.language)}
+                        .path=${mdiCheckCircleOutline}
+                    ></ha-icon-button>
+                    <ha-icon-button
+                        @click=${() => this._handleRemoveTaskClick(task.id, true)}
+                        .label=${localize('panel.cards.current.actions.remove_and_future', this.hass!.language)}
+                        title=${localize('panel.cards.current.actions.remove_and_future', this.hass!.language)}
+                        .path=${mdiDelete}
+                    ></ha-icon-button>
+                </div>
               `,
             },
             actions: {
@@ -465,8 +473,8 @@ export class HomeMaintenancePanel extends LitElement {
                 ></ha-form>
             </ha-expansion-panel>
 
-            <div class="form-field">
-                <mwc-button @click=${this._handleAddTaskClick}>
+            <div class="card-actions">
+                <mwc-button @click=${this._handleAddTaskClick} raised>
                     ${localize('panel.cards.new.actions.add_task', this.hass.language)}
                 </mwc-button>
             </div>
@@ -626,11 +634,13 @@ export class HomeMaintenancePanel extends LitElement {
         }
     }
 
-    private async _handleRemoveTaskClick(id: string) {
-        const msg = localize('panel.cards.current.confirm_remove', this.hass!.language)
+    private async _handleRemoveTaskClick(id: string, from_date: boolean = false) {
+        const msg = from_date
+            ? localize('panel.cards.current.confirm_remove_and_future', this.hass!.language)
+            : localize('panel.cards.current.confirm_remove', this.hass!.language);
         if (!confirm(msg)) return;
         try {
-            await removeTask(this.hass!, id);
+            await removeTask(this.hass!, id, from_date);
             await this.loadData();
         } catch (e) {
             console.error("Failed to remove task:", e);

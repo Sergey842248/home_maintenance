@@ -122,7 +122,8 @@ def websocket_remove_task(
     """Remove a task."""
     store = hass.data[DOMAIN].get("store")
     task_id = msg["task_id"]
-    store.delete(task_id)
+    from_date = msg.get("from_date", False)
+    store.delete(task_id, from_date)
     connection.send_result(msg["id"], {"success": True})
 
 
@@ -224,6 +225,7 @@ async def async_register_websockets(hass: HomeAssistant) -> None:
             {
                 vol.Required("type"): "home_maintenance/remove_task",
                 vol.Required("task_id"): str,
+                vol.Optional("from_date", default=False): bool,
             }
         ),
     )
