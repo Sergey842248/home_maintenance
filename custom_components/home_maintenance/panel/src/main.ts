@@ -142,8 +142,8 @@ export class HomeMaintenancePanel extends LitElement {
                 },
             },
             complete: {
-                minWidth: "128px",
-                maxWidth: "128px",
+                minWidth: "200px",
+                maxWidth: "200px",
                 sortable: false,
                 groupable: false,
                 showNarrow: true,
@@ -151,19 +151,20 @@ export class HomeMaintenancePanel extends LitElement {
                 hideable: false,
                 type: "overflow",
                 template: (task: Task) => html`
-                <div style="display: flex; justify-content: flex-end;">
-                    <ha-icon-button
+                <div style="display: flex; gap: 8px;">
+                    <mwc-button
                         @click=${() => this._handleCompleteTaskClick(task.id)}
-                        .label=${localize('panel.cards.current.actions.complete', this.hass!.language)}
-                        title=${localize('panel.cards.current.actions.complete', this.hass!.language)}
-                        .path=${mdiCheckCircleOutline}
-                    ></ha-icon-button>
-                    <ha-icon-button
+                        raised
+                        style="flex: 1;"
+                    >
+                        ${localize('panel.cards.current.actions.complete', this.hass!.language)}
+                    </mwc-button>
+                    <mwc-button
                         @click=${() => this._handleRemoveTaskClick(task.id, true)}
-                        .label=${localize('panel.cards.current.actions.remove_and_future', this.hass!.language)}
-                        title=${localize('panel.cards.current.actions.remove_and_future', this.hass!.language)}
-                        .path=${mdiDelete}
-                    ></ha-icon-button>
+                        style="flex: 1;"
+                    >
+                        ${localize('panel.cards.current.actions.remove_and_future', this.hass!.language)}
+                    </mwc-button>
                 </div>
               `,
             },

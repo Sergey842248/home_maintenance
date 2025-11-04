@@ -62,6 +62,15 @@ export const commonStyle = css`
         --input-fill-color: none;
     }
 
+    .card-actions {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .card-actions mwc-button {
+        min-width: 120px;
+    }
+
     .form-row {
         display: flex;
         justify-content: center;
