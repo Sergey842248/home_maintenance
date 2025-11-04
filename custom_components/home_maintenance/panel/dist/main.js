@@ -76,6 +76,7 @@ Try polyfilling it using "@formatjs/intl-pluralrules"
     .add-task-button {
         --mdc-theme-primary: var(--primary-color);
         --mdc-theme-on-primary: var(--text-primary-color);
+        cursor: pointer;
     }
 
     .form-row {

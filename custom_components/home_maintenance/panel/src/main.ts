@@ -476,7 +476,7 @@ export class HomeMaintenancePanel extends LitElement {
             </ha-expansion-panel>
 
             <div class="card-actions">
-                <mwc-button class="add-task-button" @click=${this._handleAddTaskClick} raised>
+                <mwc-button class="add-task-button" @click=${this._handleAddTaskClick} outlined>
                     <ha-icon .icon=${mdiPlus} style="margin-right: 8px;"></ha-icon>
                     ${localize('panel.cards.new.actions.add_task', this.hass.language)}
                 </mwc-button>

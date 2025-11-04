@@ -64,7 +64,7 @@ export const commonStyle = css`
 
     .card-actions {
         padding: 16px;
-        text-align: center;
+        text-align: left;
     }
 
     .card-actions mwc-button {
