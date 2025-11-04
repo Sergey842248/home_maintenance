@@ -71,6 +71,11 @@ export const commonStyle = css`
         min-width: 120px;
     }
 
+    .add-task-button {
+        --mdc-theme-primary: var(--primary-color);
+        --mdc-theme-on-primary: var(--text-primary-color);
+    }
+
     .form-row {
         display: flex;
         justify-content: center;
