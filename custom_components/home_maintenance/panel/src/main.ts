@@ -2,6 +2,7 @@ import {
     mdiCheckCircleOutline,
     mdiDelete,
     mdiPencil,
+    mdiPlus,
 } from "@mdi/js";
 import { LitElement, html, nothing } from "lit";
 import { property, state } from "lit/decorators.js";
@@ -476,6 +477,7 @@ export class HomeMaintenancePanel extends LitElement {
 
             <div class="card-actions">
                 <mwc-button @click=${this._handleAddTaskClick} raised>
+                    <ha-icon .icon=${mdiPlus} style="margin-right: 8px;"></ha-icon>
                     ${localize('panel.cards.new.actions.add_task', this.hass.language)}
                 </mwc-button>
             </div>
