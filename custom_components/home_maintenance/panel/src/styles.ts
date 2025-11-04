@@ -74,6 +74,7 @@ export const commonStyle = css`
     .add-task-button {
         --mdc-theme-primary: var(--primary-color);
         --mdc-theme-on-primary: var(--text-primary-color);
+        cursor: pointer;
     }
 
     .form-row {
